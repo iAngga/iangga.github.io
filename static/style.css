@@ -1,0 +1,31 @@
+body {
+  background-color: #18191A;
+  font-family: JetBrainsMono Nerd Font;
+  color: #FFFFFF;
+}
+.avatar {
+  float:left;
+  margin-right: 10px;
+}
+.gawwsu {
+}
+.canvas {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+.header {
+  padding: 65px;
+}
+.sidepanel {
+  padding-left: 65px;
+  float: left;
+}
+ul {
+  list-style-type: none;
+  width: 145px;
+  padding: 0;
+  background-color: #201F21;
+}
+.link {
+  padding-left: 15px;
+}
