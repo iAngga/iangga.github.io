@@ -1,7 +1,7 @@
 baseURL: https://iangga.github.io/
 languageCode: en-us
 title: gawwsu
-theme: github.com/setsevireon/photophobia
+theme: github.com/adityatelange/hugo-PaperMod
 
 DefaultContentLanguage: en
 SectionPagesMenu: main
