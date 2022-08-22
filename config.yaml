@@ -1,20 +1,40 @@
 baseURL: https://iangga.github.io/
 languageCode: en-us
-title: gawwsu
+title: gawwsu 
 theme: github.com/adityatelange/hugo-PaperMod
 
-DefaultContentLanguage: en
+DefaultContentLanguage: id
 SectionPagesMenu: main
-Paginate: 10
+Paginate: 5
 
 languages:
   en:
+    languageName: "English"
     weight: 1
     contentDir: content/en
   id:
+    languageName: "Bahasa Indonesia"
     weight: 2
     contentDir: content/id
 
 markup:
   highlight:
     style: native
+
+params:
+  defaultTheme: dark
+  homeInfoParams:
+    Title: gawwsu's personal blog
+    Content: >
+      Welcome to my personal blogg..
+      - Where you dont get anything useful here.
+      - 
+      - awikwok
+
+    socialIcons:
+      - name: github
+        url: "https://github.com/iangga"
+      - name: twitch
+        url: "https://twitch.tv/ianggaa"
+      - name: mastodon
+        url: "https://mastodon.social/gawwsu"
