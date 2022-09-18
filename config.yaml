@@ -24,12 +24,9 @@ markup:
 params:
   defaultTheme: dark
   homeInfoParams:
-    Title: gawwsu's personal blog
+    Title: iAngga's personal blog
     Content: >
-      Welcome to my personal blogg..
-      - Where you dont get anything useful here.
-      - 
-      - awikwok
+      Welcome to my personal blogg..Where you dont get anything useful here. hehe..
 
     socialIcons:
       - name: github
