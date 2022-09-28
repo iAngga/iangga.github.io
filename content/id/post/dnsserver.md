@@ -53,3 +53,25 @@ blog    IN      CNAME   www
 
 ```
 
+Kemudian kita edit file db.ip. Pada file ini kita ganti angka 1.0.0 menjadi angka akhiran dari ip address kita misal saya mempunyai ip address 10.100.69.18 maka saya akan mengganti angka 1.0.0 menjadi 18. Caranya sepertiini..
+
+`root@anggaww # nano db.ip`
+
+
+```
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     zonabiner.dev. root.zonabiner.dev. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      zonabiner.dev.
+18      IN      PTR     zonabiner.dev.
+
+```
+
