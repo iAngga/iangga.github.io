@@ -1,11 +1,11 @@
-# DNS Server
+### DNS Server Debian 10
 Haloo.. 
 
 Nama saya **Angga Aditia Kurnia** dari kelas **XI TKJ 1**, disini saya akan menjelaskan bagaimana proses penkonfigurasian DNS Server di linux Debian 10.
 
 Pertama kita harus melakukan proses installasi packagenya terlebih dahulu..
 
-## Proses Installasi Package Pada Debian 10
+### Proses Installasi Package Pada Debian 10
 
 Sebelumnya lakukan pengupdatean apt agar ter-refresh dengan mirror terbaru. Commandnya seperti ini..
 
@@ -15,7 +15,7 @@ Selanjutnya lakukan penginstallan package **bind9** untuk aplikasi DNS Servernya
 
 `root@anggaww # apt install bind9 dnsutils`
 
-## Proses Konfigurasi BIND9
+### Proses Konfigurasi BIND9
 Untuk memulai konfigurasi BIND9 kita dapat masuk ke direktori `/etc/bind` terlebih dahulu. Caranya seperti dibawah..
 
 `root@anggaww # cd /etc/bind`
@@ -33,3 +33,23 @@ Jika sudah terlihat, copy file db.local menjadi db.domain dan copy file db.127 m
 Edit file db.domain dan konfigurasi sesuai dengan domain yang kita inginkan dan jangan lupa untuk memasukan alamat ip address yang nantinya akan di translasikan ke domain yang kamu ingin. Sebagai contoh saya akan membuat domain angga.net dengan ip address saya yaitu 10.100.69.18 dan subdomain www dan blog. Sebagai catatan jika server subdomain sama dengan salah satu alamat server yang dituju maka anda bisa gunakana CNAME (canonical name). Saya menggunakan text editor nano sebagai catatan setelah mengedit, untuk keluar dan menyimpan tekan ctrl+x.
 
 `root@anggaww # nano db.domain`
+
+```
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     angga.net. root.angga.net. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      angga.net.
+@       IN      A       10.100.69.18
+www     IN      A       10.100.69.18
+blog    IN      CNAME   www
+
+```
+
