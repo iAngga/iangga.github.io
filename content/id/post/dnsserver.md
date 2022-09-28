@@ -75,3 +75,100 @@ $TTL    604800
 
 ```
 
+Selanjutnya kita edit file named.conf.options untuk konfigurase reverse zone. Pada 69.100.10.in-addr.arpa isikan ip address kamu secara terbalik (dari belakang). Misal ip address saya adalah 10.100.69.18 maka jika dibalik 18.69.100.10 namun jangan dituliskan semua cukup ambil 3 bagian belakang yaitu 69.100.10. Mengapa 18 tidak di inputkan ? Karena 18 sudah kita inputkan pada file db.ip.
+
+`root@anggaww # nano named.conf.local`
+
+```
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+// include "/etc/bind/zones.rfc1918";
+
+zone "zonabiner.dev"{ 
+        type master;
+        file "/etc/bind/db.domain";
+};
+
+zone "69.100.10.in-addr.arpa"{ 
+        type master;
+        file "/etc/bind/db.ip";
+};
+
+```
+
+Setelah itu kita edit file named.conf.options untuk mengkonfigurasi forwaders dns, ini berguna untuk misal kita membuat suatu dns server pada jaringan lokal kita dan ketika kita meminta request ke domain lain yang tidak kita tangani maka dns server kita akan meneruskan nya ke forwaders yang sudah kita set. Jangan lupa pada dnssec-validation kita set menjadi no.
+
+`root@anggaww # nano named.conf.options `
+
+```
+options {
+        directory "/var/cache/bind";
+
+        // If there is a firewall between you and nameservers you want
+        // to talk to, you may need to fix the firewall to allow multiple
+        // ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+        // If your ISP provided one or more IP addresses for stable
+        // nameservers, you probably want to use them as forwarders.
+        // Uncomment the following block, and insert the addresses replacing
+        // the all-0's placeholder.
+
+        forwarders {
+                8.8.8.8;
+        };
+
+        //========================================================================
+        // If BIND logs error messages about the root key being expired,
+        // you will need to update your keys.  See https://www.isc.org/bind-keys
+        //========================================================================
+        dnssec-validation no;
+
+        listen-on-v6 { any; };
+};
+
+```
+
+Selanjutnya kita edit file resolv.conf dan ubah nameserver menjadi alamat ip dns server kita.
+
+`root@anggaww # nano /etc/resolv.conf`
+
+`nameserver 10.100.69.18`
+
+Jangan lupa untuk merestart service BIND9 agar konfigurasi yang baru kita terapkan bisa digunakan.
+
+`root@anggaww # systemctl restart bind9.service `
+
+### Pengetesan 
+
+
+
+```
+nslookup 10.100.69.18
+18.69.100.10.in-addr.arpa	name = angga.net.
+
+# nslookup angga.net
+Server:		10.100.69.18
+Address:	10.100.69.18#53
+
+Name:	
+Address: 10.100.69.18
+
+nslookup www.angga.net
+Server:		10.100.69.18
+Address:	10.100.69.18#53
+
+Name:	www.angga.net
+Address: 10.100.69.18
+
+nslookup blog.angga.net
+Server:		10.100.69.18
+Address:	10.100.69.18#53
+
+blog.zonabiner.dev	canonical name = www.angga.net.
+Name:	www.angga.net
+Address: 10.100.69.18
+```
