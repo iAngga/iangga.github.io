@@ -1,6 +1,5 @@
 ---
 title: "Konfigurasi DNS Server"
-date: 2022-10-01
 tags: ["Linux", "Sekolah", "Network"]
 description: "Installasi, Konfigurasi, Pengetesan"
 ---
