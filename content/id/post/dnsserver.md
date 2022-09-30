@@ -1,4 +1,4 @@
-### DNS Server Debian 10
+# DNS Server Debian 10
 Haloo.. 
 
 Nama saya **Angga Aditia Kurnia** dari kelas **XI TKJ 1**, disini saya akan menjelaskan bagaimana proses penkonfigurasian DNS Server di linux Debian 10.
@@ -63,15 +63,15 @@ Kemudian kita edit file db.ip. Pada file ini kita ganti angka 1.0.0 menjadi angk
 ; BIND reverse data file for local loopback interface
 ;
 $TTL    604800
-@       IN      SOA     zonabiner.dev. root.zonabiner.dev. (
+@       IN      SOA     angga.net. root.angga.net. (
                               1         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-@       IN      NS      zonabiner.dev.
-18      IN      PTR     zonabiner.dev.
+@       IN      NS      angga.net.
+18      IN      PTR     angga.net.
 
 ```
 
@@ -88,7 +88,7 @@ Selanjutnya kita edit file named.conf.options untuk konfigurase reverse zone. Pa
 // organization
 // include "/etc/bind/zones.rfc1918";
 
-zone "zonabiner.dev"{ 
+zone "angga.net"{ 
         type master;
         file "/etc/bind/db.domain";
 };
@@ -143,7 +143,9 @@ Jangan lupa untuk merestart service BIND9 agar konfigurasi yang baru kita terapk
 `root@anggaww # systemctl restart bind9.service `
 
 ### Pengetesan 
+Untuk melakukan pengujian, kita hanya menggunakan perintah 
 
+`root@anggaww # nslookup "ip dns-servernya"`
 
 
 ```
@@ -168,7 +170,8 @@ nslookup blog.angga.net
 Server:		10.100.69.18
 Address:	10.100.69.18#53
 
-blog.zonabiner.dev	canonical name = www.angga.net.
+blog.angga.net	canonical name = www.angga.net.
 Name:	www.angga.net
 Address: 10.100.69.18
 ```
+Demikian, kita berhasil melakukan proses pengaturan DNS Server mulai dari penginstallan, konfigurasi, dan juga pengetesan. Sekian dari saya Terima Kasih ^.^
