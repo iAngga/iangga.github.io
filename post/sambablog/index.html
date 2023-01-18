@@ -78,7 +78,7 @@ Installasi, Konfigurasi, Pengetesan Samba Server
 <p>Sebelum mulai apa-apa siapkan Debian 10-nya yang sudah terinstall, sesudah itu ini untuk langkah-langkahnya.</p>
 <h2 id=proses-instalasi-package-samba>Proses Instalasi Package Samba<a hidden class=anchor aria-hidden=true href=#proses-instalasi-package-samba>#</a></h2>
 <p>Untuk yang pertama kita siapkan dulu cd Debian 10, dan memasukannya kedalam Debian 10 virtual machine kita.</p>
-<p><img loading=lazy src=sambas/gambar1.PNG alt=pasangcd>
+<p><img loading=lazy src=https://github.com/iAngga/iangga.github.io/blob/main/content/id/post/sambas/gambar1.PNG alt=pasangcd>
 </p>
 <p>Sudah terpasang cdnya, kita masukan command.</p>
 <p><code># apt-cdrom add</code></p>
@@ -87,11 +87,11 @@ Installasi, Konfigurasi, Pengetesan Samba Server
 <p>Jika sudah, kita langsung bisa menginstall package Sambanya.</p>
 <p><code># apt install samba</code></p>
 <p>Pada saat loading penginstallan, nanti kita akan diberikan prompt untuk <strong>&ldquo;samba server and utilities&rdquo;</strong>, kita pilih <strong>no</strong>.
-<img loading=lazy src=sambas/gambar2.PNG alt=pilihno>
+<img loading=lazy src=https://github.com/iAngga/iangga.github.io/blob/main/content/id/post/sambas/gambar2.PNG alt=pilihno>
 </p>
 <h2 id=setting-ip-untuk-debian>Setting IP Untuk Debian<a hidden class=anchor aria-hidden=true href=#setting-ip-untuk-debian>#</a></h2>
 <p>Jika proses penginstallan sudah beres, kita bisa lanjut untuk memberikan IP Address kepada mesin Debian kita. Untuk caranya kita edit file <code>/etc/network/interfaces</code> dengan teks editor sesuai pilihan, disini saya akan menggunakan teks editor <strong>Vim</strong>.</p>
-<p><img loading=lazy src=sambas/gambar3.PNG alt=settingip>
+<p><img loading=lazy src=https://github.com/iAngga/iangga.github.io/blob/main/content/id/post/sambas/gambar3.PNG alt=settingip>
 </p>
 <p>Jika sudah tersetting IPnya kita restart saja servicenya.</p>
 <p><code># /etc/init.d/networking restart</code></p>
@@ -103,10 +103,10 @@ Installasi, Konfigurasi, Pengetesan Samba Server
 <p>Jika sudah, kita bisa lanjut untuk konfigurasinya. Pertama kita pakai teks editor kita lagi untuk mengedit file <code>/etc/samba/smb.conf</code></p>
 <p><code># vim /etc/samba/smb.conf</code></p>
 <p>Jika sudah masuk filenya kita bisa lanjut untuk menambahkan konfigurasinya. Dipaling bawah kita tambahkan ini</p>
-<p><img loading=lazy src=sambas/gambar4.png alt=konfigurasi1>
+<p><img loading=lazy src=https://github.com/iAngga/iangga.github.io/blob/main/content/id/post/sambas/gambar4.PNG alt=konfigurasi1>
 </p>
 <p>Juga berikan komentar dengan menggunakan <code>#</code> di bagian ini. dimulai dari <code>[homes]</code> sampai <code>valid users</code></p>
-<p><img loading=lazy src=sambas/gambar5.PNG alt=konfigurasi2>
+<p><img loading=lazy src=https://github.com/iAngga/iangga.github.io/blob/main/content/id/post/sambas/gambar5.PNG alt=konfigurasi2>
 </p>
 <p>Sudah selesai dengan konfigurasinya, tinggal save filenya dan restart service Sambanya.</p>
 <p><code># /etc/init.d/samba-ad-dc restart</code></p>
@@ -115,20 +115,20 @@ Installasi, Konfigurasi, Pengetesan Samba Server
 <p><code># passwd namakita</code></p>
 <p>Setelah itu, kita buat user ini agar bisa login untuk prompt login jika ingin membuka folder di Windows.</p>
 <p><code># smbpasswd -a namakita</code></p>
-<p><img loading=lazy src=sambas/gambar6.png alt=username>
+<p><img loading=lazy src=https://github.com/iAngga/iangga.github.io/blob/main/content/id/post/sambas/gambar6.PNG alt=username>
 </p>
 <h2 id=pengetesan-di-client-windows>Pengetesan Di Client Windows<a hidden class=anchor aria-hidden=true href=#pengetesan-di-client-windows>#</a></h2>
 <p>Selesai sudah pengkonfigurasian Samba di Debiannya, kita mulai pengetesannya.</p>
 <p>Untuk pertama kita setting IP adapter <code>Host-only</code> kita dan samakan networknya dengan yang Debian.</p>
-<p><img loading=lazy src=sambas/gambar7.PNG alt=ipwindows>
+<p><img loading=lazy src=https://github.com/iAngga/iangga.github.io/blob/main/content/id/post/sambas/gambar7.PNG alt=ipwindows>
 </p>
 <p>Jika sudah kita tinggal tes dengan menggunakan aplikasi <code>Run</code> dengan menekan <code>Windows+R</code> di keyboard dan isikan IP Debian kita.</p>
-<p><img loading=lazy src=sambas/gambar8.PNG alt=run>
+<p><img loading=lazy src=https://github.com/iAngga/iangga.github.io/blob/main/content/id/post/sambas/gambar8.PNG alt=run>
 </p>
 <p>Jika ada folder yang kita namakan pada konfigurasi Debiannya, tandanya itu sudah bisa sharing file antar Windows dengan Debian hanya dengan menggunakan Windows Explorer. Jangan lupa jika kamu masuk kedalam foldernya nanti ada prompt untuk memasukan password, disana tinggal masukan saja.</p>
-<p><img loading=lazy src=sambas/gambar9.PNG alt=sharekeun>
+<p><img loading=lazy src=https://github.com/iAngga/iangga.github.io/blob/main/content/id/post/sambas/gambar9.PNG alt=sharekeun>
 </p>
-<p><img loading=lazy src=sambas/gambar10.PNG alt=passwd>
+<p><img loading=lazy src=https://github.com/iAngga/iangga.github.io/blob/main/content/id/post/sambas/gambar10.PNG alt=passwd>
 </p>
 <p>Selamat jika kamu sudah bisa login dan bisa masuk kefoldernya kamu tinggal share-share deh hehe.</p>
 <p>Sekian dari saya, Terima kasih sudah mampir ^.^</p>
