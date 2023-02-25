@@ -1,0 +1,151 @@
+<!doctype html><html lang=id>
+<head>
+<title>
+Konfigurasi NTP Server ::
+gawwsu
+</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Konfigurasi NTP Server Debian 10 #  Halo semua!
+Lagi-lagi kembali dengan saya, kali ini saya akan menjelaskan bagaimana caranya kita mengkonfigurasi NTP Server di linux Debian 10.
+Proses Instalasi Package #  Seperti biasa yang kita lakukan, di sini saya selalu menyarankan untuk menambahkan 3 cd Debian sekaligus. Fungsi ini disini agar memudahkan kita, walaupun, di proses konfigurasi disini hanya membutuhkan satu cd saja, yaitu cd 1 Debian 10.">
+<meta name=keywords content>
+<meta name=robots content="noodp">
+<link rel=canonical href=https://iangga.github.io/post/ntpblog/>
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=https://iangga.github.io/style.css>
+<link rel=apple-touch-icon-precomposed sizes=144x144 href=https://iangga.github.io/img/apple-touch-icon-144-precomposed.png>
+<link rel="shortcut icon" href=https://iangga.github.io/img/favicon.png>
+<link href=/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Konfigurasi NTP Server">
+<meta name=twitter:description content="Installasi, Konfigurasi, Pengetesan NTP Server">
+<meta property="og:title" content="Konfigurasi NTP Server">
+<meta property="og:description" content="Installasi, Konfigurasi, Pengetesan NTP Server">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://iangga.github.io/post/ntpblog/"><meta property="article:section" content="post">
+</head>
+<body class=dark-theme>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=https://iangga.github.io/ class=logo style=text-decoration:none>
+<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+<span class=logo__text>hello friend</span>
+<span class=logo__cursor></span>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class="menu__inner menu__inner--desktop">
+<li><a href=/about/>About</a></li>
+<li><a href=/post/>Posts</a></li>
+</ul>
+<ul class="menu__inner menu__inner--mobile">
+<li><a href=/about/>About</a></li>
+<li><a href=/post/>Posts</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<article class=post>
+<h1 class=post-title>Konfigurasi NTP Server</h1>
+<div class=post-meta>
+</div>
+<span class=post-tags>
+<a href=https://iangga.github.io/tags/linux/>#Linux</a>&nbsp;
+<a href=https://iangga.github.io/tags/sekolah/>#Sekolah</a>&nbsp;
+<a href=https://iangga.github.io/tags/network/>#Network</a>&nbsp;
+</span>
+<div class=post-content>
+<h1 id=konfigurasi-ntp-server-debian-10>
+Konfigurasi NTP Server Debian 10
+<a href=#konfigurasi-ntp-server-debian-10 class=h-anchor aria-hidden=true>#</a>
+</h1>
+<p>Halo semua!</p>
+<p>Lagi-lagi kembali dengan <strong>saya</strong>, kali ini saya akan menjelaskan bagaimana caranya kita mengkonfigurasi NTP Server di linux Debian 10.</p>
+<h3 id=proses-instalasi-package>
+Proses Instalasi Package
+<a href=#proses-instalasi-package class=h-anchor aria-hidden=true>#</a>
+</h3>
+<p>Seperti biasa yang kita lakukan, di sini saya selalu menyarankan untuk menambahkan 3 cd Debian sekaligus. Fungsi ini disini agar memudahkan kita, walaupun, di proses konfigurasi disini hanya membutuhkan satu cd saja, yaitu cd 1 Debian 10.</p>
+<p>Jika sudah ditambahkan kita tuliskan command untuk menambahkan cd yang baru di masukan agar apt bisa menambahkannya di package repo kita, juga sekalian kita refresh package manager kita.</p>
+<p><code># apt-cdrom add</code></p>
+<p><code># apt update</code></p>
+<p>Selanjutnya, kita install saja package <strong>ntp</strong>nya.</p>
+<p><code># apt install ntp</code></p>
+<h3 id=proses-konfigurasi-ntp-server>
+Proses Konfigurasi NTP Server
+<a href=#proses-konfigurasi-ntp-server class=h-anchor aria-hidden=true>#</a>
+</h3>
+<p>Disini kita lanjut ketahap konfigurasinya. Yang pertama harus kita lakukan yaitu mengkonfigurasi terlebih dahulu <strong>IP Address</strong> kita. Untuk settingnya kita tambahkan IP Static kita pada <code>/etc/network/interfaces</code>.</p>
+<p><code># vim /etc/network/interfaces</code></p>
+<p>Sudah terkonfigurasi IP kita, restart servicenya dan lanjut untuk konfigurasi <strong>NTP</strong>nya.</p>
+<p><code>vim /etc/ntp.conf</code></p>
+<p>Yang kita di isi disini ada beberapa. Yang pertama kita tambahkan comment pada daerah pool default yang diberikan, dan tambahkan daerah kita sendiri.</p>
+<pre tabindex=0><code>
+# pool.ntp.org maps to about 1000 low-stratum NTP servers.  Your server will
+# pick a different set every time it starts up.  Please consider joining the
+# pool: &lt;http://www.pool.ntp.org/join.html&gt;
+#pool 0.debian.pool.ntp.org iburst
+#pool 1.debian.pool.ntp.org iburst
+#pool 2.debian.pool.ntp.org iburst
+#pool 3.debian.pool.ntp.org iburst
+server 127.127.1.0
+fudge 127.127.1.0 startum 1
+
+</code></pre><p>Selanjutnya, hapus comment daerah dekat crytography dan juga setting disana sesuai network, netmask, broadcast kita.</p>
+<pre tabindex=0><code># Clients from this (example!) subnet have unlimited access, but only if
+# cryptographically authenticated.
+restrict 192.168.7.0 mask 255.255.255.0 notrust nomodify
+
+
+# If you want to provide time to your local subnet, change the next line.
+# (Again, the address is an example only.)
+broadcast 192.168.7.63
+</code></pre><p>Jika sudah semua, save filenya dan restart service ntp-nya.</p>
+<h3 id=pengetesan-ntp-server-pada-client>
+Pengetesan NTP Server pada Client
+<a href=#pengetesan-ntp-server-pada-client class=h-anchor aria-hidden=true>#</a>
+</h3>
+<p>Sudah semua, kita lanjut pada proses pengecekkan dan pengetesan.</p>
+<p>Yang pertama bisa kita lakukan adalah mengecek bahwa waktu lokal kita ada di ntpq kita.</p>
+<p><code># ntpq -p</code></p>
+<pre tabindex=0><code>     remote           refid      st t when poll reach   delay   offset  jitter
+==============================================================================
+*LOCAL(0)        .LOCL.           5 l   50   64  377    0.000    0.000   0.000
+ 192.168.7.63    .BCST.          16 B    -   64    0    0.000    0.000   0.000
+
+</code></pre><p>Jika sudah kita perlu setting waktu pada Windows client kita pada bagian internet timenya</p>
+</div>
+</article>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<a href=https://iangga.github.io/ class=logo style=text-decoration:none>
+<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+<span class=logo__text>hello friend</span>
+<span class=logo__cursor></span>
+</a>
+<div class=copyright>
+<span>© 2023 Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span>
+<span><a href=https://github.com/panr/hugo-theme-hello-friend target=_blank>Theme</a> made by <a href=https://github.com/panr target=_blank>panr</a></span>
+</div>
+</div>
+</footer>
+<script type=text/javascript src=/bundle.min.js></script>
+</div>
+</body>
+</html>
