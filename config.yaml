@@ -1,7 +1,7 @@
 baseURL: https://iangga.github.io/
 languageCode: en-us
 title: gawwsu 
-theme: github.com/panr/hugo-theme-hello-friend
+theme: ["PaperMod"]
 
 DefaultContentLanguage: id
 SectionPagesMenu: main
@@ -26,7 +26,7 @@ params:
   homeInfoParams:
     Title: iAngga's personal blog
     Content: >
-      Welcome to my personal blogg..Where you dont get anything useful here. hehe..
+      Welcome to my personal blogg.. Where you won't get anything useful here. hehe..
 
     socialIcons:
       - name: github
