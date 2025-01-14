@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on gawwsu</title>
+    <link>http://localhost:1313/tags/network/</link>
+    <description>Recent content in Network on gawwsu</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blablabasb</title>
+      <link>http://localhost:1313/posts/mantap/</link>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mantap/</guid>
+      <description>Installasi, Konfigurasi, Pengetesan Samba Server</description>
+    </item>
+    <item>
+      <title>Konfigurasi Database Server</title>
+      <link>http://localhost:1313/posts/databasemysql/</link>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/databasemysql/</guid>
+      <description>Installasi, Konfigurasi, Pengetesan Samba Server</description>
+    </item>
+    <item>
+      <title>Konfigurasi Samba Server</title>
+      <link>http://localhost:1313/posts/sambablog/</link>
+      <pubDate>Sun, 12 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/sambablog/</guid>
+      <description>Installasi, Konfigurasi, Pengetesan Samba Server</description>
+    </item>
+    <item>
+      <title>Konfigurasi DNS Server</title>
+      <link>http://localhost:1313/posts/dnsserver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/dnsserver/</guid>
+      <description>&lt;h1 class=&#34;heading&#34; id=&#34;dns-server-debian-10&#34;&gt;&#xA;  DNS Server Debian 10&#xA;  &lt;a href=&#34;#dns-server-debian-10&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Haloo..&lt;/p&gt;&#xA;&lt;p&gt;Nama saya &lt;strong&gt;Angga Aditia Kurnia&lt;/strong&gt; dari kelas &lt;strong&gt;XI TKJ 1&lt;/strong&gt;, disini saya akan menjelaskan bagaimana proses penkonfigurasian DNS Server di linux Debian 10.&lt;/p&gt;&#xA;&lt;p&gt;Pertama kita harus melakukan proses installasi packagenya terlebih dahulu..&lt;/p&gt;&#xA;&lt;h3 class=&#34;heading&#34; id=&#34;proses-installasi-package-pada-debian-10&#34;&gt;&#xA;  Proses Installasi Package Pada Debian 10&#xA;  &lt;a href=&#34;#proses-installasi-package-pada-debian-10&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Sebelumnya lakukan pengupdatean apt agar ter-refresh dengan mirror terbaru. Commandnya seperti ini..&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;root@anggaww # apt update&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Selanjutnya lakukan penginstallan package &lt;strong&gt;bind9&lt;/strong&gt; untuk aplikasi DNS Servernya. Juga install package &lt;strong&gt;dnsutils&lt;/strong&gt;. Untuk commandnya seperti ini..&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Konfigurasi NTP Server</title>
+      <link>http://localhost:1313/posts/ntpblog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ntpblog/</guid>
+      <description>&lt;h1 class=&#34;heading&#34; id=&#34;konfigurasi-ntp-server-debian-10&#34;&gt;&#xA;  Konfigurasi NTP Server Debian 10&#xA;  &lt;a href=&#34;#konfigurasi-ntp-server-debian-10&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Halo semua!&lt;/p&gt;&#xA;&lt;p&gt;Lagi-lagi kembali dengan &lt;strong&gt;saya&lt;/strong&gt;, kali ini saya akan menjelaskan bagaimana caranya kita mengkonfigurasi NTP Server di linux Debian 10.&lt;/p&gt;&#xA;&lt;h3 class=&#34;heading&#34; id=&#34;proses-instalasi-package&#34;&gt;&#xA;  Proses Instalasi Package&#xA;  &lt;a href=&#34;#proses-instalasi-package&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Seperti biasa yang kita lakukan, di sini saya selalu menyarankan untuk menambahkan 3 cd Debian sekaligus. Fungsi ini disini agar memudahkan kita, walaupun, di proses konfigurasi disini hanya membutuhkan satu cd saja, yaitu cd 1 Debian 10.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

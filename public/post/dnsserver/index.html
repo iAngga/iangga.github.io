@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="http://localhost:1313//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png">
+
+<meta name="description" content="Installasi, Konfigurasi, Pengetesan"/>
+
+<title>
+    
+    Konfigurasi DNS Server | gawwsu
+    
+</title>
+
+<link rel="canonical" href="http://localhost:1313/post/dnsserver/"/>
+
+<meta property="og:url" content="http://localhost:1313/post/dnsserver/">
+  <meta property="og:site_name" content="gawwsu">
+  <meta property="og:title" content="Konfigurasi DNS Server">
+  <meta property="og:description" content="Installasi, Konfigurasi, Pengetesan">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Sekolah">
+    <meta property="article:tag" content="Network">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.186794b3399a702d3092949042cdc215dea303c17e71e7c0254768448de11db8.css" media="all">
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="http://localhost:1313/">gawwsu</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/projects" >
+                /projects
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about" >
+                /about
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/post/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/post/dnsserver/">Konfigurasi DNS Server</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Konfigurasi DNS Server</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <h1 class="heading" id="dns-server-debian-10">
+  DNS Server Debian 10
+  <a href="#dns-server-debian-10">#</a>
+</h1>
+<p>Haloo..</p>
+<p>Nama saya <strong>Angga Aditia Kurnia</strong> dari kelas <strong>XI TKJ 1</strong>, disini saya akan menjelaskan bagaimana proses penkonfigurasian DNS Server di linux Debian 10.</p>
+<p>Pertama kita harus melakukan proses installasi packagenya terlebih dahulu..</p>
+<h3 class="heading" id="proses-installasi-package-pada-debian-10">
+  Proses Installasi Package Pada Debian 10
+  <a href="#proses-installasi-package-pada-debian-10">#</a>
+</h3>
+<p>Sebelumnya lakukan pengupdatean apt agar ter-refresh dengan mirror terbaru. Commandnya seperti ini..</p>
+<p><code>root@anggaww # apt update</code></p>
+<p>Selanjutnya lakukan penginstallan package <strong>bind9</strong> untuk aplikasi DNS Servernya. Juga install package <strong>dnsutils</strong>. Untuk commandnya seperti ini..</p>
+<p><code>root@anggaww # apt install bind9 dnsutils</code></p>
+<h3 class="heading" id="proses-konfigurasi-bind9">
+  Proses Konfigurasi BIND9
+  <a href="#proses-konfigurasi-bind9">#</a>
+</h3>
+<p>Untuk memulai konfigurasi BIND9 kita dapat masuk ke direktori <code>/etc/bind</code> terlebih dahulu. Caranya seperti dibawah..</p>
+<p><code>root@anggaww # cd /etc/bind</code></p>
+<p>dan lihat list file yang ada didalam direktori tersebut</p>
+<p><code>root@anggaww # ls</code></p>
+<p>Jika sudah terlihat, copy file db.local menjadi db.domain dan copy file db.127 menjadi db.ip. File file yang kita copy tersebut adalah file yang nantinya akan kita konfigurasi. Dengan cara seperti..</p>
+<p><code>root@anggaww # cp db.local db.domain</code></p>
+<p><code>root@anggaww # cp db.127 db.ip</code></p>
+<p>Edit file db.domain dan konfigurasi sesuai dengan domain yang kita inginkan dan jangan lupa untuk memasukan alamat ip address yang nantinya akan di translasikan ke domain yang kamu ingin. Sebagai contoh saya akan membuat domain angga.net dengan ip address saya yaitu 10.100.69.18 dan subdomain www dan blog. Sebagai catatan jika server subdomain sama dengan salah satu alamat server yang dituju maka anda bisa gunakana CNAME (canonical name). Saya menggunakan text editor nano sebagai catatan setelah mengedit, untuk keluar dan menyimpan tekan ctrl+x.</p>
+<p><code>root@anggaww # nano db.domain</code></p>
+<pre tabindex="0"><code>;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     angga.net. root.angga.net. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      angga.net.
+@       IN      A       10.100.69.18
+www     IN      A       10.100.69.18
+blog    IN      CNAME   www
+</code></pre><p>Kemudian kita edit file db.ip. Pada file ini kita ganti angka 1.0.0 menjadi angka akhiran dari ip address kita misal saya mempunyai ip address 10.100.69.18 maka saya akan mengganti angka 1.0.0 menjadi 18. Caranya sepertiini..</p>
+<p><code>root@anggaww # nano db.ip</code></p>
+<pre tabindex="0"><code>;
+; BIND reverse data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     angga.net. root.angga.net. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      angga.net.
+18      IN      PTR     angga.net.
+</code></pre><p>Selanjutnya kita edit file named.conf.options untuk konfigurase reverse zone. Pada 69.100.10.in-addr.arpa isikan ip address kamu secara terbalik (dari belakang). Misal ip address saya adalah 10.100.69.18 maka jika dibalik 18.69.100.10 namun jangan dituliskan semua cukup ambil 3 bagian belakang yaitu 69.100.10. Mengapa 18 tidak di inputkan ? Karena 18 sudah kita inputkan pada file db.ip.</p>
+<p><code>root@anggaww # nano named.conf.local</code></p>
+<pre tabindex="0"><code>//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+// include &#34;/etc/bind/zones.rfc1918&#34;;
+
+zone &#34;angga.net&#34;{ 
+        type master;
+        file &#34;/etc/bind/db.domain&#34;;
+};
+
+zone &#34;69.100.10.in-addr.arpa&#34;{ 
+        type master;
+        file &#34;/etc/bind/db.ip&#34;;
+};
+</code></pre><p>Setelah itu kita edit file named.conf.options untuk mengkonfigurasi forwaders dns, ini berguna untuk misal kita membuat suatu dns server pada jaringan lokal kita dan ketika kita meminta request ke domain lain yang tidak kita tangani maka dns server kita akan meneruskan nya ke forwaders yang sudah kita set. Jangan lupa pada dnssec-validation kita set menjadi no.</p>
+<p><code>root@anggaww # nano named.conf.options </code></p>
+<pre tabindex="0"><code>options {
+        directory &#34;/var/cache/bind&#34;;
+
+        // If there is a firewall between you and nameservers you want
+        // to talk to, you may need to fix the firewall to allow multiple
+        // ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+        // If your ISP provided one or more IP addresses for stable
+        // nameservers, you probably want to use them as forwarders.
+        // Uncomment the following block, and insert the addresses replacing
+        // the all-0&#39;s placeholder.
+
+        forwarders {
+                8.8.8.8;
+        };
+
+        //========================================================================
+        // If BIND logs error messages about the root key being expired,
+        // you will need to update your keys.  See https://www.isc.org/bind-keys
+        //========================================================================
+        dnssec-validation no;
+
+        listen-on-v6 { any; };
+};
+</code></pre><p>Selanjutnya kita edit file resolv.conf dan ubah nameserver menjadi alamat ip dns server kita.</p>
+<p><code>root@anggaww # nano /etc/resolv.conf</code></p>
+<p><code>nameserver 10.100.69.18</code></p>
+<p>Jangan lupa untuk merestart service BIND9 agar konfigurasi yang baru kita terapkan bisa digunakan.</p>
+<p><code>root@anggaww # systemctl restart bind9.service </code></p>
+<h3 class="heading" id="pengetesan">
+  Pengetesan
+  <a href="#pengetesan">#</a>
+</h3>
+<p>Untuk melakukan pengujian, kita hanya menggunakan perintah</p>
+<p><code>root@anggaww # nslookup &quot;ip dns-servernya&quot;</code></p>
+<pre tabindex="0"><code>nslookup 10.100.69.18
+18.69.100.10.in-addr.arpa	name = angga.net.
+
+# nslookup angga.net
+Server:		10.100.69.18
+Address:	10.100.69.18#53
+
+Name:	
+Address: 10.100.69.18
+
+nslookup www.angga.net
+Server:		10.100.69.18
+Address:	10.100.69.18#53
+
+Name:	www.angga.net
+Address: 10.100.69.18
+
+nslookup blog.angga.net
+Server:		10.100.69.18
+Address:	10.100.69.18#53
+
+blog.angga.net	canonical name = www.angga.net.
+Name:	www.angga.net
+Address: 10.100.69.18
+</code></pre><p>Demikian, kita berhasil melakukan proses pengaturan DNS Server mulai dari penginstallan, konfigurasi, dan juga pengetesan. Sekian dari saya Terima Kasih ^.^</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/post/ntpblog/">
+                        Konfigurasi NTP Server
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/post/databasemysql/">
+                        Konfigurasi Database Server
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+    </footer>
+
+    
+
+  </body>
+
+  <script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+</html>

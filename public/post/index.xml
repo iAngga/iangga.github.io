@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on gawwsu</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on gawwsu</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Konfigurasi Database Server</title>
+      <link>http://localhost:1313/post/databasemysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/databasemysql/</guid>
+      <description>&lt;h1 class=&#34;heading&#34; id=&#34;database-server-mysql-debian-10&#34;&gt;&#xA;  Database Server (MySql) Debian 10&#xA;  &lt;a href=&#34;#database-server-mysql-debian-10&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Haloo..&lt;/p&gt;&#xA;&lt;p&gt;Diblog ini kali ini saya akan menjelaskan bagaimana caranya untuk menginstall sekalian proses konfigurasi database server menggunakan MariaDB/MySQL. Untuk prosesnya kita siapkan terlebih dahulu Debian 10-nya seperti biasa.&lt;/p&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;proses-instalasi-package-mariadb&#34;&gt;&#xA;  Proses Instalasi Package MariaDB&#xA;  &lt;a href=&#34;#proses-instalasi-package-mariadb&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Untuk pertama kali kita siapkan terlebih dahulu cd pada Debian 10 kita untuk proses instalasi package&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;figure class=&#34;&#34;&gt;&#xA;&#xA;    &lt;div&gt;&#xA;        &lt;img loading=&#34;lazy&#34; alt=&#34;pasangcd&#34; src=&#34;http://localhost:1313/static/post/databasepost/pasangcd.PNG&#34; &gt;&#xA;    &lt;/div&gt;&#xA;&#xA;    &#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Setelah itu kita tambahkan list cd baru kepada package manager kita&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;# apt-cdrom add&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Konfigurasi DNS Server</title>
+      <link>http://localhost:1313/post/dnsserver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/dnsserver/</guid>
+      <description>&lt;h1 class=&#34;heading&#34; id=&#34;dns-server-debian-10&#34;&gt;&#xA;  DNS Server Debian 10&#xA;  &lt;a href=&#34;#dns-server-debian-10&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Haloo..&lt;/p&gt;&#xA;&lt;p&gt;Nama saya &lt;strong&gt;Angga Aditia Kurnia&lt;/strong&gt; dari kelas &lt;strong&gt;XI TKJ 1&lt;/strong&gt;, disini saya akan menjelaskan bagaimana proses penkonfigurasian DNS Server di linux Debian 10.&lt;/p&gt;&#xA;&lt;p&gt;Pertama kita harus melakukan proses installasi packagenya terlebih dahulu..&lt;/p&gt;&#xA;&lt;h3 class=&#34;heading&#34; id=&#34;proses-installasi-package-pada-debian-10&#34;&gt;&#xA;  Proses Installasi Package Pada Debian 10&#xA;  &lt;a href=&#34;#proses-installasi-package-pada-debian-10&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Sebelumnya lakukan pengupdatean apt agar ter-refresh dengan mirror terbaru. Commandnya seperti ini..&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;root@anggaww # apt update&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Selanjutnya lakukan penginstallan package &lt;strong&gt;bind9&lt;/strong&gt; untuk aplikasi DNS Servernya. Juga install package &lt;strong&gt;dnsutils&lt;/strong&gt;. Untuk commandnya seperti ini..&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Konfigurasi NTP Server</title>
+      <link>http://localhost:1313/post/ntpblog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/ntpblog/</guid>
+      <description>&lt;h1 class=&#34;heading&#34; id=&#34;konfigurasi-ntp-server-debian-10&#34;&gt;&#xA;  Konfigurasi NTP Server Debian 10&#xA;  &lt;a href=&#34;#konfigurasi-ntp-server-debian-10&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Halo semua!&lt;/p&gt;&#xA;&lt;p&gt;Lagi-lagi kembali dengan &lt;strong&gt;saya&lt;/strong&gt;, kali ini saya akan menjelaskan bagaimana caranya kita mengkonfigurasi NTP Server di linux Debian 10.&lt;/p&gt;&#xA;&lt;h3 class=&#34;heading&#34; id=&#34;proses-instalasi-package&#34;&gt;&#xA;  Proses Instalasi Package&#xA;  &lt;a href=&#34;#proses-instalasi-package&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Seperti biasa yang kita lakukan, di sini saya selalu menyarankan untuk menambahkan 3 cd Debian sekaligus. Fungsi ini disini agar memudahkan kita, walaupun, di proses konfigurasi disini hanya membutuhkan satu cd saja, yaitu cd 1 Debian 10.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Konfigurasi Samba Server</title>
+      <link>http://localhost:1313/post/sambablog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/sambablog/</guid>
+      <description>&lt;h1 class=&#34;heading&#34; id=&#34;samba-server-debian-10&#34;&gt;&#xA;  Samba Server Debian 10&#xA;  &lt;a href=&#34;#samba-server-debian-10&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Haloo..&lt;/p&gt;&#xA;&lt;p&gt;Kembali lagi sekarang dipostingan blog saya yang baru. Kali ini saya akan menjelasakan bagaimana cara mengkonfigurasi Samba Server di Debian 10.&lt;/p&gt;&#xA;&lt;p&gt;Sebelum mulai apa-apa siapkan Debian 10-nya yang sudah terinstall, sesudah itu ini untuk langkah-langkahnya.&lt;/p&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;proses-instalasi-package-samba&#34;&gt;&#xA;  Proses Instalasi Package Samba&#xA;  &lt;a href=&#34;#proses-instalasi-package-samba&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Untuk yang pertama kita siapkan dulu cd Debian 10, dan memasukannya kedalam Debian 10 virtual machine kita.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;figure class=&#34;&#34;&gt;&#xA;&#xA;    &lt;div&gt;&#xA;        &lt;img loading=&#34;lazy&#34; alt=&#34;pasangcd&#34; src=&#34;http://localhost:1313/static/post/sambas/gambar1.PNG&#34; &gt;&#xA;    &lt;/div&gt;&#xA;&#xA;    &#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Sudah terpasang cdnya, kita masukan command.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/posts/mantap/</loc>
+    <lastmod>2024-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/databasemysql/</loc>
+    <lastmod>2024-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2024-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/network/</loc>
+    <lastmod>2024-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2024-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sekolah/</loc>
+    <lastmod>2024-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/sambablog/</loc>
+    <lastmod>2023-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/dnsserver/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/ntpblog/</loc>
+  </url>
+</urlset>

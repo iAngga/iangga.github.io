@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on gawwsu</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on gawwsu</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Konfigurasi Samba Server</title>
+      <link>http://localhost:1313/posts/sambablog/</link>
+      <pubDate>Sat, 04 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/sambablog/</guid>
+      <description>Installasi, Konfigurasi, Pengetesan Samba Server</description>
+    </item>
+    <item>
+      <title>Konfigurasi NTP Server</title>
+      <link>http://localhost:1313/posts/ntpblog/</link>
+      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ntpblog/</guid>
+      <description>Installasi, Konfigurasi, Pengetesan NTP Server</description>
+    </item>
+    <item>
+      <title>Konfigurasi DNS Server</title>
+      <link>http://localhost:1313/posts/dnsserver/</link>
+      <pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/dnsserver/</guid>
+      <description>Installasi, Konfigurasi, Pengetesan DNS Server</description>
+    </item>
+    <item>
+      <title>Konfigurasi Database Server</title>
+      <link>http://localhost:1313/posts/databasemysql/</link>
+      <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/databasemysql/</guid>
+      <description>Installasi, Konfigurasi, Pengetesan Samba Server</description>
+    </item>
+  </channel>
+</rss>
