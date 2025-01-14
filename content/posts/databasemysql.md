@@ -14,7 +14,7 @@ hideBackToTop: false
 
 # Database Server (MySql) Debian 10 
 
-Haloo..
+Haloo...
 
 Diblog ini kali ini saya akan menjelaskan bagaimana caranya untuk menginstall sekalian proses konfigurasi database server menggunakan MariaDB/MySQL. Untuk prosesnya kita siapkan terlebih dahulu Debian 10-nya seperti biasa.
 
